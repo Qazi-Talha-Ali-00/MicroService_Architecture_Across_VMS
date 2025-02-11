@@ -1,0 +1,20 @@
+{
+  "name": "microservice_architecture_across_vms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qazi-Talha-Ali-00/MicroService_Architecture_Across_VMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Qazi-Talha-Ali-00/MicroService_Architecture_Across_VMS/issues"
+  },
+  "homepage": "https://github.com/Qazi-Talha-Ali-00/MicroService_Architecture_Across_VMS#readme"
+}

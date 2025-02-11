@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Microservices Frontend</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    button { margin: 10px 0; padding: 10px 20px; }
+    .result { margin: 10px 0; font-size: 1.2em; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Microservices Frontend</h1>
+
+  <div>
+    <button id="getGreeting">Get Greeting</button>
+    <p id="greetingResult" class="result"></p>
+  </div>
+ 
+  <div>
+    <button id="getTime">Get Time</button>
+    <p id="timeResult" class="result"></p>
+  </div>
+ 
+  <script>
+    // Replace these placeholders with the actual IP addresses or hostnames of your backend services.
+    const greetingServiceUrl = 'http://10.0.2.4:3000/api/greeting';
+    const timeServiceUrl = 'http://10.0.2.15:3000/api/time';
+
+    document.getElementById('getGreeting').addEventListener('click', function() {
+  fetch(greetingServiceUrl)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('greetingResult').innerText = data.message;  // Update this line
+    })
+    .catch(error => {
+      console.error('Error fetching greeting:', error);
+      document.getElementById('greetingResult').innerText = 'Error fetching greeting.';
+    });
+});
+
+
+    document.getElementById('getTime').addEventListener('click', function() {
+      fetch(timeServiceUrl)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('timeResult').innerText = 'Current time: ' + data.currentTime;
+        })
+        .catch(error => {
+          console.error('Error fetching time:', error);
+          document.getElementById('timeResult').innerText = 'Error fetching time.';
+        });
+    });
+  </script>
+</body>
+</html>
